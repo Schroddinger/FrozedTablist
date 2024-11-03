@@ -5,7 +5,9 @@ import com.google.common.collect.Lists;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.EntityType;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class Skin {
@@ -14,6 +16,7 @@ public class Skin {
 
 	private static final List<Skin> DOT_SKINS = Lists.newArrayList();
 	private static final ArrayListMultimap<EntityType, Skin> MOB_SKINS = ArrayListMultimap.create();
+	public static final Map<String, Skin> GENERAL_SKINS = new HashMap<>();
 
 	public static final Skin DISCORD_SKIN;
 	public static final Skin NAMEMC_SKIN;
@@ -384,6 +387,30 @@ public class Skin {
 						"Y1ujadK6OTRrm6WleyL0Dujj2qoBFZKAshem2gKRbwBjUQOWZ6jhlKzl9z7t1L/nKCAdjyFFxHdLOIlqh41l+v/8HxnQsyIl4mEzYQsN77s2uBE4pUGq+UH6hhTMKNIvqDkOruvDuRBe31k9Q731MP7zq/MUBeYT9OTQqf6eRvh+liwC6uxPW1UWDK5TQzjAYXZl/wdFUcbGL4x5/u5S6WcA5syV8SiJ9NAdrn9YBX6B4rHpByrOcMz9jeTKs5kGdc30NiLTkiYSOo97oxqCKCqdSdN/KPUqx6kcgYeWW2mxzFVjnPGMdTqEGM9N0doHuPn+W2YFwp8yywx5h3ZqWgQwKAMmpHwJKAvYvI+B8vu6E/cbzCn6H+LsqHbtBFnyQXxtH11ePxUdHCLcGwvWiI/3rURnD5F8Dz3ZYpJNCKaa4dg6UQm0Rs5nwvOrwJ5VxusZv9kIHEYEAM4NuwE/NHtpBhBQc7t665x5XLOfIdaU77OwwXlVNfvCRq3QqRkA4AzyqfIxnFpQ/SQR96vfa9OMHm05ktnxOq8pMAAY2FKF/Saqn2FM94FxjZ4NXHFW+rfkk4fMyjund/NUfuGoEOThVCVGIfpjUWbQtp4h+vxk5Qo38DqiYVqWRhT6eWHcKOxxZngY4JbzF07f/jh3tSgq1tI0WKz79J+slHS5Yx4="
 				)
 		);
+
+		GENERAL_SKINS.put("DISCORD_SKIN", DISCORD_SKIN);
+		GENERAL_SKINS.put("NAMEMC_SKIN", NAMEMC_SKIN);
+		GENERAL_SKINS.put("FACEBOOK_SKIN", FACEBOOK_SKIN);
+		GENERAL_SKINS.put("TWITTER_SKIN", TWITTER_SKIN);
+		GENERAL_SKINS.put("YOUTUBE_SKIN", YOUTUBE_SKIN);
+		GENERAL_SKINS.put("TELEGRAM_SKIN", TELEGRAM_SKIN);
+		GENERAL_SKINS.put("GOOGLE_SKIN", GOOGLE_SKIN);
+		GENERAL_SKINS.put("STAR_SKIN", STAR_SKIN);
+		GENERAL_SKINS.put("MINECON", MINECON);
+		GENERAL_SKINS.put("GRAPH_SKIN", GRAPH_SKIN);
+		GENERAL_SKINS.put("CROWN_SKIN", CROWN_SKIN);
+		GENERAL_SKINS.put("WARNING_SKIN", WARNING_SKIN);
+		GENERAL_SKINS.put("PING_SKIN", PING_SKIN);
+		GENERAL_SKINS.put("NO_PING_SKIN", NO_PING_SKIN);
+		GENERAL_SKINS.put("PIKACHU_SKIN", PIKACHU_SKIN);
+		GENERAL_SKINS.put("CREEPER_SKIN", CREEPER_SKIN);
+		GENERAL_SKINS.put("FLAME_SKIN", FLAME_SKIN);
+		GENERAL_SKINS.put("DOLAR_SKIN", DOLAR_SKIN);
+		GENERAL_SKINS.put("SOUL_FLAME_SKIN", SOUL_FLAME_SKIN);
+		GENERAL_SKINS.put("OPEN_LOCK", OPEN_LOCK);
+		GENERAL_SKINS.put("CLOSED_LOCK", CLOSED_LOCK);
+		GENERAL_SKINS.put("DEFAULT_SKIN", DEFAULT_SKIN);
+
 	}
 
 	public Skin(String value, String signature) {
@@ -432,7 +459,7 @@ public class Skin {
 	public static Skin getMob(EntityType type, int alternateForm) {
 		List<Skin> skins = MOB_SKINS.get(type);
 
-		if (skins == null || skins.size() == 0) {
+		if (skins == null || skins.isEmpty()) {
 			return DEFAULT_SKIN;
 		}
 
